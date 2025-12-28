@@ -1,4 +1,4 @@
-package org.example;
+package br.com.otavio;
 
 public class SimpleMath {
 
