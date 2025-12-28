@@ -1,8 +1,6 @@
 package br.com.otavio;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.DisplayNameGenerator;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -10,11 +8,33 @@ import static org.junit.jupiter.api.Assertions.fail;
 @DisplayName("Test Math in SimpleMath Operations")
 public class SimpleMathTest {
 
+    @BeforeAll
+    static void setup() {
+        System.out.println("Executando o @BeforeAll");
+    }
+
+    @AfterAll
+    static void cleanup() {
+        System.out.println("Executando o @AfterAll");
+    }
+
+    @BeforeEach
+    void beforeeach() {
+        System.out.println("Executando o @BeforeEach");
+    }
+
+    @AfterEach
+    void afterEach () {
+        System.out.println("Executando o @AfterEach");
+    }
+
 
 
     @Test
     @DisplayName("Test 6.2 + 2 = 8.2")
     void testSUM_GivenTwoNumbers_ReturnsCorrectSUM() {
+        System.out.println("Test SUM");
+
         //OK Testando a soma
 
 
@@ -40,7 +60,7 @@ public class SimpleMathTest {
     @Test
     @DisplayName("Test 4 - 2.5 = 1.5")
     void testSUB_GivenTwoNumbers_ReturnsCorrectSUB() {
-
+        System.out.println("Test SUB");
         //OK Testando Subtraction
 
         //Given()
@@ -67,6 +87,7 @@ public class SimpleMathTest {
     @Test
     @DisplayName("Test 4*2.5 = 10")
     void testMULTI_GivenTwoNumbers_ReturnsCorrectMULTI() {
+        System.out.println("Test MULTI");
         // Testando Multiplicação
 
         //Given()
@@ -87,6 +108,7 @@ public class SimpleMathTest {
     @Test
     @DisplayName("Test 4/2 = 2")
     void testDIV_GivenTwoNumbers_ReturnsCorrectDIV() {
+        System.out.println("Test DIV");
         //Testando Divisão
 
         //Given()
@@ -108,6 +130,7 @@ public class SimpleMathTest {
     @Test
     @DisplayName("Test (4+2)/2 = 3")
     void testMEDIA_GivenTwoNumbers_ReturnsCorrectAVG () {
+        System.out.println("Test AVG");
         //Testando Média
 
         //Given()
@@ -125,9 +148,13 @@ public class SimpleMathTest {
         assertEquals(expected, result, () -> message);
     }
 
+
     @Test
     @DisplayName("Test 4^-2 = 2")
+    @Disabled("Teste ainda em desenvolvimento !")
     void testRaizQuadrada_GivenTwoNumbers_ReturnsCorrectSqrRoot (){
+        System.out.println("Test SQR ROOT");
+
         //Testando raiz quadrada
 
         //Given()
@@ -145,5 +172,11 @@ public class SimpleMathTest {
         assertEquals(expected, result, ()-> message);
     }
 
+
+
+
 }
+
+
+
 
