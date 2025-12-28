@@ -1,5 +1,6 @@
 package br.com.otavio;
 
+import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,12 +15,12 @@ public class SimpleMathTest {
 
         //Given()
         SimpleMath math = new SimpleMath();
-        Double firstNumber = 6.2D;
-        Double secondNumber = 2D;
-        Double resultSUM = math.sum(firstNumber, secondNumber); //"actual"
+        double firstNumber = 6.2D;
+        double secondNumber = 2D;
+        double resultSUM = math.sum(firstNumber, secondNumber); //"actual"
 
         //When()
-        Double expectedSUM = 8.2D; //"expected"
+        double expectedSUM = 8.2D; //"expected"
 
 
         //Then()
@@ -38,13 +39,13 @@ public class SimpleMathTest {
 
         //Given()
         SimpleMath math = new SimpleMath();
-        Double firstNumber = 4D;
-        Double secondNumber = 2.5D;
-        Double expected = 1.5D;
-        //Double notResult = 5D;
+        double firstNumber = 4D;
+        double secondNumber = 2.5D;
+        double expected = 1.5D;
+        //double notResult = 5D;
 
         //When()
-        Double result = math.subtraction(firstNumber, secondNumber);
+        double result = math.subtraction(firstNumber, secondNumber);
 
         //Then()
         String message = firstNumber + "-" + secondNumber + " Does not produce " + expected;
@@ -61,13 +62,13 @@ public class SimpleMathTest {
 
         //Given()
         SimpleMath math = new SimpleMath();
-        Double firstNumber = 4D;
-        Double secondNumber = 2.5D;
-        Double expected = 10D;
+        double firstNumber = 4D;
+        double secondNumber = 2.5D;
+        double expected = 10D;
 
 
         //When()
-        Double result = math.multiplication(firstNumber, secondNumber);
+        double result = math.multiplication(firstNumber, secondNumber);
 
 
         //Then()
@@ -82,23 +83,57 @@ public class SimpleMathTest {
 
         //Given()
         SimpleMath math =new SimpleMath();
-        Double firstNumber = 4D;
-        Double secondNumber = 2D;
-        Double expected = 2D;
+        double firstNumber = 4D;
+        double secondNumber = 2D;
+        double expected = 2D;
 
 
         //When()
-        Double result = math.division(firstNumber, secondNumber);
+        double result = math.division(firstNumber, secondNumber);
 
         //Then()
         String message = firstNumber + "/" + secondNumber + " Is not Producing " + expected;
-        assertEquals(expected, result, ()->message);
-
-
-
+        assertEquals(expected, result, () -> message);
 
     }
 
+    @Test
+    void testMEDIA () {
+        //Testando Média
+
+        //Given()
+        SimpleMath math = new SimpleMath();
+        double firstNumber = 4D;
+        double secondNumber = 2D;
+        double expected = 3D;
+
+        //When()
+        double result = math.mean(firstNumber, secondNumber);
+
+
+        //Then()
+        String message = "(" + firstNumber + "+" + secondNumber + ")" + "/ 2 " + "->" + " Is not Producing " + expected;
+        assertEquals(expected, result, () -> message);
+    }
+
+    @Test
+    void testRaizQuadrada (){
+        //Testando raiz quadrada
+
+        //Given()
+        SimpleMath math = new SimpleMath();
+        double firstNumber = 4D;
+        double secondNumber = 2D;
+        double expected = 2D;
+
+        //When()
+        double result = math.squareRoot(firstNumber, secondNumber);
+
+
+        //Then()
+        String message = "The root of " + firstNumber + " Is not Producing " + expected;
+        assertEquals(expected, result, ()-> message);
+    }
 
 }
 

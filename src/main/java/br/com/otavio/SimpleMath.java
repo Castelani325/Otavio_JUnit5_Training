@@ -24,7 +24,7 @@ public class SimpleMath {
         return (firstNumber + secondNumber) / 2;
     }
 
-    public Double squareRoot(Double number) {
+    public Double squareRoot(Double number, Double secondNumber) {
         return (Double) Math.sqrt(number);
     }
 }
