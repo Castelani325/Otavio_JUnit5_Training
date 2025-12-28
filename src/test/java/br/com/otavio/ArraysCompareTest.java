@@ -1,9 +1,12 @@
 package br.com.otavio;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 
 import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
@@ -11,7 +14,27 @@ public class ArraysCompareTest {
 
 
     @Test
-    @DisplayName("Test description")
+    // @Timeout(1) 1 segundo para o Timeout
+    @Timeout(value = 15, unit = TimeUnit.MILLISECONDS) //15 milisegundos para TimeOut
+    @DisplayName("Testing TimeOut in Second and Miliseconds")
+    void testArrays_GivenOneArray_RunthroughToTimeOut() {
+        //Given()
+        int[] numbers = {25, 8, 21, 32, 3};
+
+        //When()
+        for (int i = 0; i<100000000; i++) {
+            numbers[0] = i;
+            Arrays.sort(numbers);
+
+        }
+        //Then()
+
+    }
+
+
+    @Test
+    @Disabled("Desabilitado para poder utilizar o TimeOut")
+    @DisplayName("Testing Arrays comparison")
     void testArrays_GivenTwoArrays_ReturnsEquals () {
         //Given()
         int[] numbers = {25, 8, 21, 32, 3};
