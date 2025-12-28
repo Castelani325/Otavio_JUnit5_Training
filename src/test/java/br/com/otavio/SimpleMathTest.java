@@ -1,15 +1,20 @@
 package br.com.otavio;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.fail;
 
+@DisplayName("Test Math in SimpleMath Operations")
 public class SimpleMathTest {
 
+
+
     @Test
-    void testSUM() {
+    @DisplayName("Test 6.2 + 2 = 8.2")
+    void testSUM_GivenTwoNumbers_ReturnsCorrectSUM() {
         //OK Testando a soma
 
 
@@ -33,7 +38,8 @@ public class SimpleMathTest {
     }
 
     @Test
-    void testSUB() {
+    @DisplayName("Test 4 - 2.5 = 1.5")
+    void testSUB_GivenTwoNumbers_ReturnsCorrectSUB() {
 
         //OK Testando Subtraction
 
@@ -48,7 +54,9 @@ public class SimpleMathTest {
         double result = math.subtraction(firstNumber, secondNumber);
 
         //Then()
-        String message = firstNumber + "-" + secondNumber + " Does not produce " + expected;
+        String message =
+                firstNumber + "-" + secondNumber +
+                        " Does not produce " + expected;
         assertEquals(1.5D, result, () -> message);
         //assertNotEquals(notResult ,result);
         //assertNotNull(result);
@@ -57,7 +65,8 @@ public class SimpleMathTest {
 
 
     @Test
-    void testMULTI() {
+    @DisplayName("Test 4*2.5 = 10")
+    void testMULTI_GivenTwoNumbers_ReturnsCorrectMULTI() {
         // Testando Multiplicação
 
         //Given()
@@ -66,10 +75,8 @@ public class SimpleMathTest {
         double secondNumber = 2.5D;
         double expected = 10D;
 
-
         //When()
         double result = math.multiplication(firstNumber, secondNumber);
-
 
         //Then()
         String message = firstNumber + "*" + secondNumber + " Is not Producing " + expected;
@@ -78,7 +85,8 @@ public class SimpleMathTest {
     }
 
     @Test
-    void testDIV() {
+    @DisplayName("Test 4/2 = 2")
+    void testDIV_GivenTwoNumbers_ReturnsCorrectDIV() {
         //Testando Divisão
 
         //Given()
@@ -98,7 +106,8 @@ public class SimpleMathTest {
     }
 
     @Test
-    void testMEDIA () {
+    @DisplayName("Test (4+2)/2 = 3")
+    void testMEDIA_GivenTwoNumbers_ReturnsCorrectAVG () {
         //Testando Média
 
         //Given()
@@ -117,7 +126,8 @@ public class SimpleMathTest {
     }
 
     @Test
-    void testRaizQuadrada (){
+    @DisplayName("Test 4^-2 = 2")
+    void testRaizQuadrada_GivenTwoNumbers_ReturnsCorrectSqrRoot (){
         //Testando raiz quadrada
 
         //Given()
