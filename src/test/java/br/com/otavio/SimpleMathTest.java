@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 @DisplayName("Test Math in SimpleMath Operations")
 public class SimpleMathTest {
 
+    SimpleMath math;
     @BeforeAll
     static void setup() {
         System.out.println("Executando o @BeforeAll");
@@ -20,6 +21,8 @@ public class SimpleMathTest {
 
     @BeforeEach
     void beforeeach() {
+
+        math = new SimpleMath();
         System.out.println("Executando o @BeforeEach");
     }
 
@@ -170,6 +173,25 @@ public class SimpleMathTest {
         //Then()
         String message = "The root of " + firstNumber + " Is not Producing " + expected;
         assertEquals(expected, result, ()-> message);
+    }
+
+    @Test
+    @DisplayName("Testing negative numbers for SUM")
+    void testSUM_GivenTwoNegativeNumbers_ReturnsNegative() {
+        //Given()
+        double firstNumber = -5D;
+        double secondNumber = -10D;
+        double expected = -15D;
+
+        //When()
+        double result = math.sum(firstNumber, secondNumber);
+
+        //Then()
+        String message = firstNumber + "-" + secondNumber +
+                        " Does not produce " + expected;
+        assertEquals(expected, result, ()-> message);
+
+
     }
 
 
