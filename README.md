@@ -14,6 +14,12 @@ Este projeto é resultado do estudo prático realizado através do curso **"Test
 
 **Curso de referência:** [Java Unit Testing com Spring Boot 3, JUnit 5 e Mockito](https://www.udemy.com/course/java-unit-testing-com-java-spring-boot-3-junit-5-e-mockito/)
 
+## 📒 Caderno de Estudos (Notion)
+
+Durante o curso, faço anotações teóricas, salvo snippets de código e organizo referências importantes no Notion. Você pode acessar meu caderno de estudos abaixo:
+
+🔗 **[Acessar Anotações no Notion](https://www.notion.so/DEV-Test-QA-2d6dc464b63d8086a152d14ff2b55248)**
+
 ## 🛠️ Tecnologias e Ferramentas
 
 * **Java 17/21**
@@ -26,20 +32,14 @@ Este projeto é resultado do estudo prático realizado através do curso **"Test
 * **Lombok**
 * **Maven**
 
-## 📒 Caderno de Estudos (Notion)
-
-Além do código prático neste repositório, mantenho uma documentação detalhada com conceitos teóricos, diagramas e passo-a-passo no meu Notion.
-
-🔗 **[Clique aqui para acessar minhas anotações completas no Notion]([INSIRA_O_SEU_LINK_AQUI](https://www.notion.so/DEV-Test-QA-2d6dc464b63d8086a152d14ff2b55248))**
-
 ## 🚀 Progresso dos Estudos
 
 Abaixo, o acompanhamento dos módulos concluídos e tópicos dominados:
 
-- [ ] **Introdução ao JUnit 5**
-    - [ ] Ciclo de vida dos testes (`@BeforeEach`, `@AfterAll`, etc.)
-    - [ ] Assertions básicas e avançadas
-    - [ ] Testes parametrizados
+- [x] **Introdução ao JUnit 5**
+    - [x] Ciclo de vida dos testes (`@BeforeEach`, `@AfterAll`, etc.)
+    - [x] Assertions básicas e avançadas
+    - [x] Testes parametrizados
 - [ ] **TDD (Test Driven Development)**
     - [ ] Ciclo Red-Green-Refactor
 - [ ] **Mockito e Testes Unitários**
@@ -59,7 +59,7 @@ Abaixo, o acompanhamento dos módulos concluídos e tópicos dominados:
 - [ ] **Cobertura de Código (Code Coverage)**
     - [ ] JaCoCo Plugin
 
-## 📝 Cheat Sheet (Anotações Rápidas)
+## 📝 Cheat Sheet (Resumo Rápido)
 
 Pequenos lembretes sobre anotações e métodos essenciais aprendidos durante o curso:
 
@@ -73,3 +73,10 @@ Pequenos lembretes sobre anotações e métodos essenciais aprendidos durante o 
 | `Assertions.assertEquals(esp, atual)` | Verifica se o valor esperado é igual ao atual. |
 | `Mockito.when(x).thenReturn(y)` | Define o comportamento: "Quando x for chamado, retorne y". |
 
+## 🏁 Como Executar os Testes
+
+Para rodar os testes localmente, certifique-se de ter o Maven e o JDK instalados.
+
+1. Clone o repositório:
+```bash
+git clone [https://github.com/SEU-USUARIO/NOME-DO-REPO.git](https://github.com/SEU-USUARIO/NOME-DO-REPO.git)
