@@ -2,9 +2,15 @@ package br.com.otavio;
 
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
+
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class SimpleMathTestS4 {
 
@@ -34,17 +40,17 @@ public class SimpleMathTestS4 {
     }
 
 
-    @ParameterizedTest
-    @DisplayName("Testing division : [ firstNumber,  secondNumber,  expected]")
-    //@MethodSource() //viria o nome da função static no () se tivesse um nome diferente da função teste
 
+
+//    @MethodSource() //viria o nome da função static no () se tivesse um nome diferente da função teste
 //    @CsvSource ({
 //            "6.2,2,3.1",
 //            "71, 14, 5.07",
 //            "18.3, 3.1, 5.90"
 //    })
-
     // CORRETO
+    @ParameterizedTest
+    @DisplayName("Testing division : [ firstNumber,  secondNumber,  expected]")
     @CsvFileSource(resources = "/testDivision.csv")
     void testDIV_GivenTwoNumbers_ReturnsCorrectDIV(double firstNumber, double secondNumber, double expected) {
 
@@ -72,6 +78,19 @@ public class SimpleMathTestS4 {
 //
 //                );
 //    }
+
+        @DisplayName("Test description")
+        @ParameterizedTest
+        @ValueSource(strings = {"Pele","Senna","Keith Moon"})
+        void testValueSource(String firstName) {
+            //Given()
+            //When()
+            //Then()
+
+            System.out.println(firstName);
+            assertNotNull(firstName);
+        }
+
 
 }
 
