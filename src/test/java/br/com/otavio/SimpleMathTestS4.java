@@ -79,6 +79,8 @@ public class SimpleMathTestS4 {
 //                );
 //    }
 
+
+    //Teste com @ValueSource
         @DisplayName("Test description")
         @ParameterizedTest
         @ValueSource(strings = {"Pele","Senna","Keith Moon"})
@@ -90,6 +92,9 @@ public class SimpleMathTestS4 {
             System.out.println(firstName);
             assertNotNull(firstName);
         }
+
+        //Testes Repetiveis com @ReatedTest
+
 
 
 }
