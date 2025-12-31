@@ -6,12 +6,13 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
 
-@Order(3)
 //Por padrão, o JUnit já ordena por nome
-@TestMethodOrder(MethodOrderer.MethodName.class)
-public class MethodOrderedByNameTest {
+@Order(1)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class MethodOrderedByOrderTest {
 
     @Test
+    @Order(2)
     //@DisplayName("Test description")
     void testA() {
         System.out.println("Testando Test A");
@@ -22,6 +23,7 @@ public class MethodOrderedByNameTest {
     }
 
     @Test
+    @Order(1)
     //@DisplayName("Test description")
     void testB() {
         System.out.println("Testando Test B");
@@ -32,6 +34,7 @@ public class MethodOrderedByNameTest {
     }
 
     @Test
+    @Order(4)
     //@DisplayName("Test description")
     void testC() {
         System.out.println("Testando Test C");
@@ -42,6 +45,7 @@ public class MethodOrderedByNameTest {
     }
 
     @Test
+    @Order(3)
     //@DisplayName("Test description")
     void testD() {
         System.out.println("Testando Test D");
