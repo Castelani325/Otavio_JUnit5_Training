@@ -26,6 +26,12 @@ Este projeto é resultado do estudo prático realizado através do curso **"Test
 * **Lombok**
 * **Maven**
 
+## 📒 Caderno de Estudos (Notion)
+
+Além do código prático neste repositório, mantenho uma documentação detalhada com conceitos teóricos, diagramas e passo-a-passo no meu Notion.
+
+🔗 **[Clique aqui para acessar minhas anotações completas no Notion]([INSIRA_O_SEU_LINK_AQUI](https://www.notion.so/DEV-Test-QA-2d6dc464b63d8086a152d14ff2b55248))**
+
 ## 🚀 Progresso dos Estudos
 
 Abaixo, o acompanhamento dos módulos concluídos e tópicos dominados:
