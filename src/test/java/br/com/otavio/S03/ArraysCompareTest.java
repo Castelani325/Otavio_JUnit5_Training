@@ -1,4 +1,4 @@
-package br.com.otavio;
+package br.com.otavio.S03;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;

@@ -1,5 +1,6 @@
-package br.com.otavio;
+package br.com.otavio.S04;
 
+import br.com.otavio.SimpleMath;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;

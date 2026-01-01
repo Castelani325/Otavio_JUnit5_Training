@@ -1,10 +1,15 @@
-package br.com.otavio;
+package br.com.otavio.S04;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
-@Order(2)
-@TestMethodOrder(MethodOrderer.Random.class)
-public class MethodOrderedRandonlyTest {
+
+@Order(3)
+//Por padrão, o JUnit já ordena por nome
+@TestMethodOrder(MethodOrderer.MethodName.class)
+public class MethodOrderedByNameTest {
 
     @Test
     //@DisplayName("Test description")
