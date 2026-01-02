@@ -11,10 +11,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PersonServiceTest {
 
+    IPersonService service;
     Person person;
 
     @BeforeEach
     void setup(){
+        service = new PersonService();
        person = new Person (
        "Keith",
         "Moon",
@@ -27,7 +29,6 @@ public class PersonServiceTest {
     @DisplayName("When create a Pearson with Success, should Return Person Object")
     void testCreatePerson_WhenSucess_ReturnPersonObject() {
         //Given()
-        IPersonService service = new PersonService();
 
         //When()
         Person actual = service.createPearson(person);
@@ -42,8 +43,6 @@ public class PersonServiceTest {
     @DisplayName("When create a Pearson with Success, should contains FirstName in Returned Person Object")
     void testCreatePerson_WhenSucess_ShouldContainsAllAtributesInReturnPersonObject() {
         //Given()
-        IPersonService service = new PersonService();
-
 
         //When()
         Person actual = service.createPearson(person);
@@ -60,5 +59,18 @@ public class PersonServiceTest {
         assertEquals(person.getGender(), actual.getGender(), ()->"Should Return Gender");
 
     }
+
+        @Test
+        @DisplayName("When create a person with Null email should throw exception")
+        void testCreatePerson_WithNullEmail_ShouldThrowIllegalArgumentException() {
+            //Given()
+            person.setEmail(null) ;
+            var expectedMessage = "Person's email is null or empty";
+
+            //When()/Then()
+
+            IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,()-> service.createPearson(person), ()->"Empty Email should cause an illegal argument exception !");
+            assertEquals(expectedMessage, exception.getMessage(), ()-> "Exceptions should be equal." );
+        }
 
 }
