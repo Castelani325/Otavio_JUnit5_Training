@@ -40,8 +40,8 @@ Abaixo, o acompanhamento dos módulos concluídos e tópicos dominados:
     - [x] Ciclo de vida dos testes (`@BeforeEach`, `@AfterAll`, etc.)
     - [x] Assertions básicas e avançadas
     - [x] Testes parametrizados
-- [ ] **TDD (Test Driven Development)**
-    - [ ] Ciclo Red-Green-Refactor
+- [x] **TDD (Test Driven Development)**
+    - [x] Ciclo Red-Green-Refactor
 - [ ] **Mockito e Testes Unitários**
     - [ ] Uso de `@Mock` e `@InjectMocks`
     - [ ] Stubbing ( `when(...).thenReturn(...)` )
