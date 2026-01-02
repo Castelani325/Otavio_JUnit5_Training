@@ -1,11 +1,13 @@
 package br.com.otavio.Model;
 
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
 public class Person implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
 
@@ -13,9 +15,9 @@ public class Person implements Serializable {
     private Long id;
     private String firstName;
     private String lastName;
+    private String email;
     private String adress;
     private String gender;
-    private String email;
 
 
     public Person (){};
@@ -24,9 +26,9 @@ public class Person implements Serializable {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.email = email;
         this.adress = adress;
         this.gender = gender;
-        this.email = email;
     }
 
     @Override
