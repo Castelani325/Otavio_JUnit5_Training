@@ -21,12 +21,15 @@ public class CourseBusiness {
         var filteredCourses = new ArrayList<String>();
         var allCourses = service.retriveCourses(student);
 
+        if ("Gustavo".equals(student)) return filteredCourses;
+
         for (String course : allCourses) {
-            if (course.contains("Spting")){
+            if (course.contains("Spring")){
                 filteredCourses.add(course);
+                System.out.println( "Computado : "+ course);
             }
             else {
-                System.out.println("Este curso não é Spting");}
+                System.out.println("Este curso não é de Spring");}
         }
 
         return filteredCourses;
