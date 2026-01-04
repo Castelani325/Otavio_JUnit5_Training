@@ -22,4 +22,12 @@ public class CourseServiceStub implements CourseService {
                 "Kotlin para DEV's Java: Aprenda a Linguagem Padrão do Android",
                 "Microsserviços do 0 com Spring Cloud, Kotlin e Docker");
     }
+
+
+    //Caso haja a inclusão de um metodo desse, cada stub deve receber esses métodos, mesmo que não seja utilizado.
+    //Isso gera muito retrabalho.
+    public  List<String> doSomething (String string) {
+
+        return null;
+    };
 }
