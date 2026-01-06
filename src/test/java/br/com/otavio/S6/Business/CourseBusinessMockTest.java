@@ -1,21 +1,21 @@
 package br.com.otavio.S6.Business;
 
 
-import br.com.otavio.CourseBusiness;
-import br.com.otavio.Service.CourseService;
-import br.com.otavio.Service.Stubs.CourseServiceStub;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+
+import br.com.otavio.CourseBusiness;
+import br.com.otavio.Service.CourseService;
+
 
 public class CourseBusinessMockTest {
 
@@ -60,6 +60,27 @@ public class CourseBusinessMockTest {
         assertEquals(4, filteredCourses.size());
     }
 
+    @Test
+    @DisplayName("Testing ...")
+    void testMockingList_WhenThrowAnException (){
+        //Given()
+        var list = mock(List.class);
+        
+        //When()
+        when(list.get(anyInt())).thenThrow(new RuntimeException("Foo Bar"));
+
+
+        //then()
+
+        assertThrows(RuntimeException.class,
+            ()-> {list.get(anyInt());},
+            ()-> "Should Have throw an RunTIme Exception");
+
+        
+
+    }
+
+    
 
 
 }
