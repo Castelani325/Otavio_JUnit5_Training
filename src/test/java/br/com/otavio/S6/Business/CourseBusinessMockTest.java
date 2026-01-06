@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.when;
 
 public class CourseBusinessMockTest {
@@ -31,7 +31,7 @@ public class CourseBusinessMockTest {
         business = new CourseBusiness(mockService);
         courses = Arrays.asList(
                 "REST API's RESTFul do 0 à Azure com ASP.NET Core 5 e Docker",
-                "Agile Desmistificado com Scrum, XP, Kanban e Trello",
+                "Agile Desmistificado comq Scrum, XP, Kanban e Trello",
                 "Spotify Engineering Culture Desmistificado",
                 "REST API's RESTFul do 0 à AWS com Spring Boot 3 Java e Docker",
                 "Docker do Zero à Maestria - Contêinerização Desmistificada",
