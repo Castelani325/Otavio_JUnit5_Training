@@ -1,21 +1,21 @@
 package br.com.otavio.S6.Business;
 
 
-import br.com.otavio.CourseBusiness;
-import br.com.otavio.Service.CourseService;
-import br.com.otavio.Service.Stubs.CourseServiceStub;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+
+import br.com.otavio.CourseBusiness;
+import br.com.otavio.Service.CourseService;
+
 
 public class CourseBusinessMockTest {
 
@@ -31,7 +31,7 @@ public class CourseBusinessMockTest {
         business = new CourseBusiness(mockService);
         courses = Arrays.asList(
                 "REST API's RESTFul do 0 à Azure com ASP.NET Core 5 e Docker",
-                "Agile Desmistificado comq Scrum, XP, Kanban e Trello",
+                "Agile Desmistificado com Scrum, XP, Kanban e Trello",
                 "Spotify Engineering Culture Desmistificado",
                 "REST API's RESTFul do 0 à AWS com Spring Boot 3 Java e Docker",
                 "Docker do Zero à Maestria - Contêinerização Desmistificada",
@@ -60,6 +60,27 @@ public class CourseBusinessMockTest {
         assertEquals(4, filteredCourses.size());
     }
 
+    @Test
+    @DisplayName("Testing ...")
+    void testMockingList_WhenThrowAnException (){
+        //Given()
+        var list = mock(List.class);
+        
+        //When()
+        when(list.get(anyInt())).thenThrow(new RuntimeException("Foo Bar"));
+
+
+        //then()
+
+        assertThrows(RuntimeException.class,
+            ()-> {list.get(anyInt());},
+            ()-> "Should Have throw an RunTIme Exception");
+
+        
+
+    }
+
+    
 
 
 }

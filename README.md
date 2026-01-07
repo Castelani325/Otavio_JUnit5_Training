@@ -44,9 +44,9 @@ Abaixo, o acompanhamento dos módulos concluídos e tópicos dominados:
     - [x] Ciclo Red-Green-Refactor
 - [ ] **Mockito e Testes Unitários**
     - [ ] Uso de `@Mock` e `@InjectMocks`
-    - [ ] Stubbing ( `when(...).thenReturn(...)` )
+    - [x] Stubbing ( `when(...).thenReturn(...)` )
     - [ ] Verificação de chamadas (`verify`)
-    - [ ] Tratamento de Exceptions em testes
+    - [x] Tratamento de Exceptions em testes
 - [ ] **Testes de Integração com Spring Boot**
     - [ ] `@SpringBootTest` e Contexto do Spring
     - [ ] Testes de Repositories (DataJPA)
