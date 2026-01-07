@@ -26,8 +26,16 @@ public class CourseServiceStub implements CourseService {
 
     //Caso haja a inclusão de um metodo desse, cada stub deve receber esses métodos, mesmo que não seja utilizado.
     //Isso gera muito retrabalho.
-    public  List<String> doSomething (String string) {
+    public ArrayList<Integer> CountToTen () {
 
-        return null;
+        ArrayList<Integer> lista = new ArrayList<>();
+
+        for (int i = 0; i>=10 ; i++) {
+            lista.add(i);
+        }
+        System.out.println(lista);
+
+
+        return lista;
     };
 }
