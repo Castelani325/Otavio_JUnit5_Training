@@ -74,13 +74,12 @@ public class CourseBusinessMockTest {
 
         assertThrows(RuntimeException.class,
             ()-> {list.get(anyInt());},
-            ()-> "Should Have throw an RunTIme Exception");
-
-        
-
+            ()-> "Should Have throw an RunTime Exception");
+                  
     }
 
-    
 
+   
+  
 
 }

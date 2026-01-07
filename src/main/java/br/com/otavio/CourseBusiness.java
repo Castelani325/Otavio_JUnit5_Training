@@ -36,4 +36,25 @@ public class CourseBusiness {
     };
 
 
+    public void deleteCoursesNotRelatedToString (String student) {
+
+               var allCourses = service.retriveCourses(student);
+
+        for (String course : allCourses) {
+            if (!course.contains("Spring")){
+                service.deleteCourse(course);
+                System.out.println( "Deletado : "+ course);
+            }
+            else {
+                System.out.println("Este curso é relacionado a Spring");}
+        }
+       
+    };
+
+    
+
+
+   
+
+
 }

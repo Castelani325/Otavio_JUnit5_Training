@@ -1,10 +1,10 @@
 package br.com.otavio.Service.Stubs;
 
-import br.com.otavio.Service.CourseService;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import br.com.otavio.Service.CourseService;
 
 public class CourseServiceStub implements CourseService {
 
@@ -32,10 +32,13 @@ public class CourseServiceStub implements CourseService {
 
         for (int i = 0; i>=10 ; i++) {
             lista.add(i);
+            System.out.println(i + "...");
         }
         System.out.println(lista);
 
 
         return lista;
     };
+
+    public void deleteCourse (String student) {};
 }

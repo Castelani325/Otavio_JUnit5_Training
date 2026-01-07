@@ -1,18 +1,17 @@
 package br.com.otavio.S6.Business;
 
-import br.com.otavio.Service.Stubs.CourseServiceStub;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.BDDMockito.*;
-import static org.mockito.Mockito.*;
+import static org.hamcrest.Matchers.is;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.mock;
+
+import br.com.otavio.Service.Stubs.CourseServiceStub;
 
 public class ListDesafioTest {
 
@@ -25,7 +24,7 @@ public class ListDesafioTest {
         ArrayList<Integer> listDeRetorno = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
 
         CourseServiceStub course = mock(CourseServiceStub.class);
-                                       // mock(List.class) -> mostra que o mock criado deve se comportar como uma List
+                                       // mock(List.class) -> mostra que o mock criado deve se comportar como uma classe List
         //When()
         given(course.CountToTen()).willReturn(listDeRetorno);
 
