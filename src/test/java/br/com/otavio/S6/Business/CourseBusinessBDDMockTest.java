@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.BDDMockito;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.mock;
@@ -93,6 +94,38 @@ public class CourseBusinessBDDMockTest {
 
 
 }
+
+
+
+//V2
+    @Test
+    @DisplayName("Delete Courses Not Related to Spring Using Mockito should call Method")
+    void testDeletedCoursesNotRelatedToSpring_UsingMockitoVerify_ShouldCallMethodDeleteCourseV2() {
+    
+        // Given
+        // setup no @BeforeEach
+        given(mockService.retriveCourses("Leandro")).willReturn(courses);
+        String courseTest = "Docker do Zero à Maestria - Contêinerização Desmistificada"; //testando com tudo minusculo
+
+        // When
+        business.deleteCoursesNotRelatedToString("Leandro");
+             
+  
+        // Then
+        if (!courseTest.contains("Spring")) {
+            System.out.println("O curso Não contem 'Spring'".toUpperCase());
+            BDDMockito.then(mockService).should().deleteCourse(courseTest); //Should work - Verifica se foi chamado ao menos uma vez
+            }
+
+        else {
+            System.out.println("O curso contem 'Spring'".toUpperCase());
+            BDDMockito.then(mockService).should(never()).deleteCourse(courseTest); //Should work - Verifica se nunca foi chamado
+            
+            }
+
+
+}
+
 
 
 }
