@@ -4,10 +4,12 @@ package br.com.otavio.S6.Business;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 import org.mockito.BDDMockito;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.atLeast;
@@ -125,6 +127,39 @@ public class CourseBusinessBDDMockTest {
 
 
 }
+
+//V2
+    @Test
+    @DisplayName("Testing Delete using Carpture Arguments")
+    void testDeletedCoursesNotRelatedToSpring_CapturingArguments_ShouldCallMethodDeleteCourse() {
+    
+        // Given
+        // setup no @BeforeEach
+
+        courses = Arrays.asList(
+                "REST API's RESTFul do 0 à Azure com ASP.NET Core 5 e Docker",
+                "Agile Desmistificado com Scrum, XP, Kanban e Trello");
+
+        given(mockService.retriveCourses("Leandro")).willReturn(courses);
+        String agileCourse = "Agile Desmistificado com Scrum, XP, Kanban e Trello"; //testando com tudo minusculo
+
+        ArgumentCaptor<String> argumentCapture = ArgumentCaptor.forClass(String.class);
+
+
+        
+        // When
+        business.deleteCoursesNotRelatedToString("Leandro");
+             
+  
+        // Then
+        
+            System.out.println("O curso Não contem 'Spring'".toUpperCase());
+            BDDMockito.then(mockService).should().deleteCourse(argumentCapture.capture()); //Should work - Verifica se foi chamado ao menos uma vez
+
+            assertEquals(argumentCapture.getValue(), is(agileCourse));
+            
+}
+
 
 
 
