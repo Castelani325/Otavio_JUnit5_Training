@@ -11,7 +11,7 @@ public class ListTest {
 
     @Test
     @DisplayName("Testing Arrays Test")
-    void testMockingList_when_GetISCalledWithArgumentMatcher_ShouldReturnMultipleValues() {
+    void testMockingLqist_when_GetISCalledWithArgumentMatcher_ShouldReturnMultipleValues() {
         //Given()
         List<?> list = mock(List.class);
 

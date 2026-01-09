@@ -1,5 +1,16 @@
-package br.com.otavio.S6.Business;
+package br.com.otavio.S7.Mockito;
 
+
+import br.com.otavio.CourseBusiness;
+import br.com.otavio.Service.CourseService;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,29 +18,18 @@ import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.ArgumentCaptor;
-import org.mockito.BDDMockito;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.*;
 
-import br.com.otavio.CourseBusiness;
-import br.com.otavio.Service.CourseService;
-import org.mockito.Captor;
-import org.mockito.junit.jupiter.MockitoExtension;
-
 
 @ExtendWith(MockitoExtension.class)
-public class CourseBusinessBDDMockTest {
+public class CourseBusinessMockitoInjectMockTest {
 
-    @Captor
-    ArgumentCaptor<String> argumentCapture;
-
+    @Mock
     CourseService mockService ; //= mock(CourseService.class);
+
+    @InjectMocks
     CourseBusiness business;
     List<String> courses;
 
@@ -37,8 +37,7 @@ public class CourseBusinessBDDMockTest {
     void setup(){
 
         //Given()
-
-        mockService = mock(CourseService.class);
+        // mockService = mock(CourseService.class);
         business = new CourseBusiness(mockService);
         courses = Arrays.asList(
                 "REST API's RESTFul do 0 à Azure com ASP.NET Core 5 e Docker",
@@ -151,7 +150,7 @@ public class CourseBusinessBDDMockTest {
         given(mockService.retriveCourses("Leandro")).willReturn(courses);
         //String agileCourse = "Agile Desmistificado com Scrum, XP, Kanban e Trello"; //testando com tudo minusculo
 
-        //ArgumentCaptor<String> argumentCapture = ArgumentCaptor.forClass(String.class);
+        ArgumentCaptor<String> argumentCapture = ArgumentCaptor.forClass(String.class);
 
         // When
         business.deleteCoursesNotRelatedToString("Leandro");
@@ -163,7 +162,7 @@ public class CourseBusinessBDDMockTest {
 
 
         //assertThat(argumentCapture.getValue(), is(agileCourse));
-        assertThat(argumentCapture.getAllValues(), is(7));
+        assertThat(argumentCapture.getAllValues().size(), is(7));
 }
 
 
