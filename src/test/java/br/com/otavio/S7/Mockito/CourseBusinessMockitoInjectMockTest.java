@@ -8,6 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -32,6 +33,9 @@ public class CourseBusinessMockitoInjectMockTest {
     @InjectMocks
     CourseBusiness business;
     List<String> courses;
+
+    @Captor
+    ArgumentCaptor<String> argumentCapture;
 
     @BeforeEach
     void setup(){
@@ -150,7 +154,7 @@ public class CourseBusinessMockitoInjectMockTest {
         given(mockService.retriveCourses("Leandro")).willReturn(courses);
         //String agileCourse = "Agile Desmistificado com Scrum, XP, Kanban e Trello"; //testando com tudo minusculo
 
-        ArgumentCaptor<String> argumentCapture = ArgumentCaptor.forClass(String.class);
+        //ArgumentCaptor<String> argumentCapture = ArgumentCaptor.forClass(String.class);
 
         // When
         business.deleteCoursesNotRelatedToString("Leandro");
