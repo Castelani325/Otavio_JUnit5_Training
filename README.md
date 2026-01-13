@@ -1,4 +1,4 @@
-# ☕ Testes Automatizados com Java, Spring Boot e JUnit 5
+# ☕Testes Automatizados com Java, Spring Boot e JUnit5
 
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
@@ -43,9 +43,9 @@ Abaixo, o acompanhamento dos módulos concluídos e tópicos dominados:
 - [x] **TDD (Test Driven Development)**
     - [x] Ciclo Red-Green-Refactor
 - [ ] **Mockito e Testes Unitários**
-    - [ ] Uso de `@Mock` e `@InjectMocks`
+    - [x] Uso de `@Mock` e `@InjectMocks`
     - [x] Stubbing ( `when(...).thenReturn(...)` )
-    - [ ] Verificação de chamadas (`verify`)
+    - [x] Verificação de chamadas (`verify`)
     - [x] Tratamento de Exceptions em testes
 - [ ] **Testes de Integração com Spring Boot**
     - [ ] `@SpringBootTest` e Contexto do Spring
